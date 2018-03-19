@@ -11,12 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :Nombre %>
-    <%= form.text_field :name, id: :company_name %>
+    <%= form.text_field :name, id: :company_name, class:'form-control' %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Enviar', class: 'btn btn-info btn-md' %>
   </div>
+  <br>
 <% end %>
