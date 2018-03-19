@@ -21,4 +21,4 @@ end
   Complain.create(user_id: User.all.sample.id, company_id: Company.all.sample.id, content: "#{Faker::RickAndMorty.quote}")
 end
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') 
