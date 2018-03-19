@@ -1,6 +1,6 @@
 <tr id="com<%= @company.id %>">
   <td id="com-name<%= @company.id %>"><%= @company.name %></td>
-  <td><%= link_to 'Ver Quejas', @company, class:'btn btn-info' %></td>
+  <td><%= link_to 'Ver Reclamos', @company, class:'btn btn-info' %></td>
   <td><%= link_to 'Edit', edit_company_path(@company),class: 'btn btn-success' %></td>
   <td><%= link_to 'Destroy', @company, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
 </tr>

@@ -1,6 +1,28 @@
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
+<%= link_to 'Volver', companies_path, class:'btn btn-info' %>
 
-<%= link_to 'Volver', companies_path %>
+<h3 class="text-center"><%= @company.name %></h3>
+<br>
+<br>
+<h5>Lista de reclamos:</h3>
+<% if @complains.size == 0 %>
+  <p>No hay remclamos aun:</p>
+  <ul class="list-group" id="complain-list">
+  </ul>
+<% else %>
+  <ul class="list-group" id="complain-list">
+    <% @complains.each do |complain| %>
+      <li class="list-group-item">
+        <%= complain.user.email %>: <%= complain.content %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<h5>Ingresa un reclamo:</h5>
+<%= form_with model: [@company ,@complain] do |f| %>
+  <div class="form-group">
+    <%= f.label :contenido %>
+    <%= f.text_area :content, class:'form-control' %>
+  </div>
+  <br>
+  <%= f.submit 'Enviar Reclamo' %>
+<% end %>
